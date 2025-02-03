@@ -1,0 +1,229 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: 100vh;
+
+  &-top, &-bottom {
+    height: 6vh;
+  }
+
+  &-top {
+    display: flex;
+    border-bottom: 1px solid var(--color-grey);
+    padding: 0 1rem;
+    cursor: pointer;
+
+    &--user {
+      width: 80%;
+      display: flex;
+      align-items: center;
+
+      &-photo {
+        width: 4rem;
+        height: 4rem;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+      }
+
+      &-name {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      &-email {
+        font-size: 1.2rem;
+      }
+    }
+
+    &--icons {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &-middle {
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: 1px solid var(--color-grey);
+
+    &--items-container {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      inset: 0;
+      margin-top: 1rem;
+    }
+
+    &--item {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      margin: 1rem 0;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+
+      &-wrapper {
+        height: 9rem;
+
+        &:hover {
+          background-color: var(--color-grey-light);
+        }
+      }
+    }
+
+    &--item, &--date {
+      padding: 0 1.5rem;
+    }
+
+    &--date {
+      margin-bottom: -1rem;
+
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+
+    &--info {
+      margin-left: 1rem;
+      width: calc(100% - 5rem);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+
+      &-name {
+        font-size: 1.6rem;
+        font-weight: bold;
+        position: relative;
+
+        &-time {
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 1rem;
+        }
+      }
+
+      &-note {
+        font-size: 1.2rem;
+        position: relative;
+
+        &-count {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 50%;
+          background-color: var(--color-blue);
+          color: var(--color-white);
+          text-align: center;
+          font-size: 1rem;
+          font-weight: bold;
+          z-index: 20;
+        }
+      }
+
+      &-paragraph {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 38rem;
+        white-space: nowrap;
+        height: 3rem;
+        color: var(--color-grey);
+        font-size: 1.2rem;
+      }
+    }
+
+    &--photo {
+      width: 4rem;
+      height: 4rem;
+      padding: 2rem;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--color-white);
+      font-weight: bold;
+      font-size: 1.6rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--action-icons {
+      position: absolute;
+      right: .5rem;
+      top: 0;
+      display: flex;
+      width: 3.5rem;
+      flex-direction: column;
+      transform: translateX(5rem);
+      transition: all .2s ease;
+      height: 9rem;
+      justify-content: space-evenly;
+    }
+
+    &--item-wrapper:hover &--action-icons {
+      transform: translateX(0);
+      align-items: center;
+    }
+
+    &--item-wrapper:hover &--info-name-time, {
+      display: none;
+    }
+  }
+
+  &-bottom {
+    padding: 1rem 0;
+
+    &--icons-list {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    &--icon {
+      width: 5rem;
+      height: 5rem;
+      padding: 1rem;
+      border-radius: 5rem;
+      transition: all .2s ease;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-grey-light);
+      }
+    }
+  }
+
+  .colored {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+}

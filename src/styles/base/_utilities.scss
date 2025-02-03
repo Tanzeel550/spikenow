@@ -1,0 +1,18 @@
+.dateBar {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.backIcon {
+  // its size in react is 24rem
+  // its parent element is expected to have flexbox
+  cursor: pointer;
+  margin: 0 2rem;
+  align-self: center;
+}
+
+.pinky {
+  color: #ff329c;
+}
+
