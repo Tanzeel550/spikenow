@@ -39,6 +39,8 @@ const Popup = () => {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       e.stopImmediatePropagation();
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       const t = e.target?.closest('.popup');
       if (!t && popupState.show && !firstClick) setFirstClick(true);
       else if (!t && popupState.show && firstClick) {
